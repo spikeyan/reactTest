@@ -35,7 +35,7 @@ module.exports = {
             {
                 test:/\.styl$/,
                 loader:ExtractTextPlugin.extract({
-                    use:'css-loader?minimize!stylus-loader'
+                    use:'css-loader?minimize&modules!stylus-loader'
                 })
             },
             {

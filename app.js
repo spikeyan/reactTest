@@ -1,6 +1,8 @@
 /**
  * Created by spikeyan on 2017/12/25.
  */
+const PORT = 8088
+
 const Koa = require('koa');
 const Router = require('koa-router');
 const BodyParser = require('koa-bodyparser')
@@ -47,7 +49,8 @@ app
     .use(router.allowedMethods())
 // .listen(8088)
 
-server.listen(8088)
+server.listen(PORT)
+console.log(`listening on port ${PORT}`)
 
 // const WebSocket = require('ws');
 //
