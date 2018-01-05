@@ -91,7 +91,7 @@ class Clock extends React.Component {
 }
 
 function cao(){
-    alert(998)
+    alert(9982)
 }
 
 ReactDOM.render(
