@@ -1,6 +1,7 @@
 /**
  * Created by spikeyan on 2017/12/19.
  */
+
 import ReactDOM from 'react-dom'
 import React from 'react'
 import {hello} from './basic.styl'

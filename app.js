@@ -1,7 +1,7 @@
 /**
  * Created by spikeyan on 2017/12/25.
  */
-const PORT = 8088
+require('dotenv').config()
 
 const Koa = require('koa');
 const Router = require('koa-router');
@@ -49,8 +49,8 @@ app
     .use(router.allowedMethods())
 // .listen(8088)
 
-server.listen(PORT)
-console.log(`listening on port ${PORT}`)
+server.listen(process.env.APP_PORT)
+console.log(`listening on port ${process.env.APP_PORT}`)
 
 // const WebSocket = require('ws');
 //
