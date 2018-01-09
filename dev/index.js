@@ -13,13 +13,18 @@ import {
     Switch
 } from 'react-router-dom'
 import PrivateRoute from './arch/pro.jsx'
+import Bundle from './arch/bundle.jsx'
 
 
-import Login from './pages/login/login'
+import LoginAsync from 'bundle-loader?lazy!./pages/login/login'
 import Main from './pages/main/main'
 import Full from './pages/full/full'
 
-
+const Login = (props) => (
+    <Bundle load={LoginAsync}>
+        {(Result) => <Result {...props}/>}
+    </Bundle>
+)
 
 const Root = () =>(
     <Router>

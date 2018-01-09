@@ -31,7 +31,8 @@
     "url-loader": "^0.6.2",
     "vue": "^2.5.13",
     "vue-router": "^3.0.1",
-    "webpack": "^3.10.0"
+    "webpack": "^3.10.0",
+    "wheel-indicator": "^1.1.4"
   },
   "devDependencies": {},
   "scripts": {
