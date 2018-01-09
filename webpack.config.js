@@ -7,6 +7,7 @@ var webpack = require('webpack');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
+var CleanWebpackPlugin = require('clean-webpack-plugin');
 
 module.exports = env => {
 
@@ -43,6 +44,12 @@ module.exports = env => {
                     })
                 },
                 {
+                    test:/\.stylus$/,
+                    loader:ExtractTextPlugin.extract({
+                        use:'css-loader?minimize&!stylus-loader'
+                    })
+                },
+                {
                     test:/\.html$/,
                     loader:'html-loader'
                 },
@@ -74,7 +81,14 @@ module.exports = env => {
                 filename: 'index.html',
                 template: './dev/index.html',
                 hash:true
-            })
+            }),
+            new CleanWebpackPlugin(['www'], {
+                verbose: true,
+                dry: false,
+                watch: false,
+                exclude: [ 'lib'],
+                allowExternal: false
+            }),
         ],
         resolve:{
             alias:{
